@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+
+<body>
+    <h1> CUSTOMER</h1>
+
+    <table border = "1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}    <!--boucle jinja pour parcourir les produits récupérés de la BDD et afficher chaque produit ss forme de ligne ds un tableau HTML-->
+            <tr>
+                <td>{{ customer[0]}}</td>      <!-- balises jinja pour insérer dynamiquement les valeurs des colonnes id, description et price de chaque produit -->
+                <td>{{ customer[1]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</body>
+</html>

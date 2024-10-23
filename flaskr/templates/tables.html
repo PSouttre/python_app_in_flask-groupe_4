@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href="{{ url_for('static', filename ='tables.css')}}">
+</head>
+
+<body>
+    <h1> CUSTOMER ANALYSIS</h1>
+
+    <table border = "1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Country</th>
+                <th>Customer Order Id </th>
+                <th>Invoice Nb</th>
+                <th>Invoice Date</th>
+                <th>Order Detail Id</th>
+                <th>Quantity</th>
+                <th>Product Id</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in tables %}    <!--boucle jinja pour parcourir les produits récupérés de la BDD et afficher chaque produit ss forme de ligne ds un tableau HTML-->
+            <tr>
+                <td>{{ table[0]}}</td>      <!-- balises jinja pour insérer dynamiquement les valeurs des colonnes id, description et price de chaque produit -->
+                <td>{{ table[1]}}</td>
+                <td>{{ table[2]}}</td>
+                <td>{{ table[3]}}</td>
+                <td>{{ table[4]}}</td>
+                <td>{{ table[5]}}</td>
+                <td>{{ table[6]}}</td>
+                <td>{{ table[7]}}</td>
+                <td>{{ table[8]}}</td>
+                <td>{{ table[9]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</body>
+</html>

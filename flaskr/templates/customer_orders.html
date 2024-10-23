@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+
+<body>
+    <h1> CUSTOMER ORDER</h1>
+
+    <table border = "1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Invoice_nb</th>
+                <th>invoice_data</th>
+                <th>customer_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer_order in customer_orders %}    <!--boucle jinja pour parcourir les produits récupérés de la BDD et afficher chaque produit ss forme de ligne ds un tableau HTML-->
+            <tr>
+                <td>{{ customer_order[0]}}</td>      <!-- balises jinja pour insérer dynamiquement les valeurs des colonnes id, description et price de chaque produit -->
+                <td>{{ customer_order[1]}}</td>
+                <td>{{ customer_order[2]}}</td>
+                <td>{{ customer_order[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</body>
+</html>
